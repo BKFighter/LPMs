@@ -22,3 +22,12 @@ function roundRect(x,y,w,h,cr,join,color,outcolor){
     ctx.strokeRect(rectX+(cornerRadius/2), rectY+(cornerRadius/2), rectWidth-cornerRadius, rectHeight-cornerRadius);
     ctx.fillRect(rectX+(cornerRadius/2), rectY+(cornerRadius/2), rectWidth-cornerRadius, rectHeight-cornerRadius);
 }
+function triangle(x1, y1, x2, y2, x3, y3,color) {
+    ctx.beginPath();
+    ctx.moveTo(x1,y1);
+    ctx.lineTo(x2,y2);
+    ctx.lineTo(x3,y3);
+    ctx.closePath();
+    ctx.fillStyle = color;
+    ctx.fill();
+}
