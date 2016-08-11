@@ -4,7 +4,7 @@ They are addons for LilCoders that are not built in features at the moment but c
 
 # How can I make one?
 
-They are just javascript functions made with the canvas API.
+They are just javascript functions made with the canvas API. Send us a PR with the LPM if you do!
 
 # Examples?
 
