@@ -1,0 +1,8 @@
+function circle(x, y, radius, fill){
+      
+      var context = ctx.getContext('2d');
+      context.beginPath();
+      context.arc(x, y, radius, 0, 2 * Math.PI, false);
+      context.fillStyle = fill;
+      context.fill();
+};
