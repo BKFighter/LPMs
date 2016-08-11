@@ -4,3 +4,7 @@ function circle(x, y, radius, fill){
       ctx.fillStyle = fill;
       ctx.fill();
 };
+function rect(x,y,w,h,color) {
+      ctx.fillStyle=color;
+      ctx.fillRect(x,y,w,h);
+}
