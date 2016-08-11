@@ -7,4 +7,18 @@ function circle(x, y, radius, color){
 function rect(x,y,w,h,color) {
       ctx.fillStyle=color;
       ctx.fillRect(x,y,w,h);
+};
+function roundRect(x,y,w,h,cr,join,color,outcolor){
+    var rectX = x;
+    var rectY = y;
+    var rectWidth = w;
+    var rectHeight = h;
+    var cornerRadius = cr;
+
+    ctx.lineJoin = join;
+    ctx.lineWidth = cornerRadius;
+    ctx.fillStyle=color
+    ctx.strokeStyle=outcolor;
+    ctx.strokeRect(rectX+(cornerRadius/2), rectY+(cornerRadius/2), rectWidth-cornerRadius, rectHeight-cornerRadius);
+    ctx.fillRect(rectX+(cornerRadius/2), rectY+(cornerRadius/2), rectWidth-cornerRadius, rectHeight-cornerRadius);
 }
