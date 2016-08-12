@@ -1,7 +1,6 @@
 /*
-Based off of turtlewax.js simplified and edited for use in LilCoders.
+Based off of turtlewax.js simplified and edited for use in LilCoders. May be broken may not be
 */
-alert("the pen lpm has been loaded")
 
 Pen = function() {
 	this.dir = -90;
