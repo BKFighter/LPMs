@@ -1,2 +1,3 @@
 *.lpm linguist-language=Javascript
 *.lpm Javascript
+*.lpm diff=Javascript
