@@ -1,0 +1,11 @@
+// http://tinyurl.com/mtmbyfm
+
+function newSVG(spriteName,data) {
+
+  var DOMURL = window.URL || window.webkitURL || window;
+  var svg = new Blob([data], {type: 'image/svg+xml;charset=utf-8'});
+  var url = DOMURL.createObjectURL(svg);
+  DOMURL.revokeObjectURL(url);
+  eval(spriteName + ".setImage(url);");
+
+}
