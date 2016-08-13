@@ -11,7 +11,7 @@ if (edited["center"]===undefined) {
 edited["center"]=true;
     var _old_stop = stopCode;
     stopCode = function() {
-    console.log(1)
+    ctx.transform(1,0,0,1,-100,-100);
         return _old_stop.apply(window, arguments);
         
     };
