@@ -1,8 +1,10 @@
+var tx=0;
+var ty=0;
 function setCenter(_state) {
   if (_state === true) {
-      ctx.transform(1,0,0,1,100,100);
-  } if (_state === false) {
-      ctx.transform(1,0,0,1,0,0);
+      tx=100;
+      ty=100;
+      ctx.transform(1,0,0,1,tx,ty);
   }
 }
 
@@ -11,7 +13,9 @@ if (edited["center"]===undefined) {
 edited["center"]=true;
     var _old_stop = stopCode;
     stopCode = function() {
-    ctx.transform(1,0,0,1,-100,-100);
+    ctx.transform(1,0,0,1,-tx,-ty);
+    tx=0;
+    ty=0;
         return _old_stop.apply(window, arguments);
         
     };
