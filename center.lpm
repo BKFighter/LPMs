@@ -6,6 +6,14 @@ function setCenter(_state) {
   }
 }
 
-function onstop() {
-  ctx.transform(1,0,0,1,0,0);
+if (edited["center"]===undefined) {
+(function() {
+edited["center"]=true;
+    var _old_stop = stopCode;
+    stopCode = function() {
+    console.log(1)
+        return _old_stop.apply(window, arguments);
+        
+    };
+})();
 }
