@@ -1,3 +1,4 @@
+Warning! Any code that you contribute to the LilCoders source is owned by LilCoders!
 # What are LPMs?
 
 They are addons for LilCoders that are not built in features at the moment but can be added with the plugin function.
