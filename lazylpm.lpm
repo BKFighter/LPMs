@@ -1,0 +1,40 @@
+// Run lazylpm() like you do plugin().
+
+function lazylpm(url, callback) {
+  if (window.attachEvent) {
+    window.attachEvent('onload', dolazylpm(url, callback));
+  }
+  
+  else {
+    window.addEventListener('load', dolazylpm(url, callback), false);
+  }
+}
+
+function dolazylpm(url, callback){
+  totalPlugins++;
+  console.log("Started Load")
+  var script = document.createElement("script")
+  script.type = "text/javascript";
+  script.async = true;
+
+  if (script.readyState){  //IE
+      script.onreadystatechange = function(){
+          if (script.readyState == "loaded" ||
+                  script.readyState == "complete"){
+              script.onreadystatechange = null;
+              console.log("Loaded")
+              loadedPlugins++;
+              callback();
+          }
+      };
+  } else {  //Others
+      script.onload = function(){
+      	console.log("Loaded")
+              loadedPlugins++;
+          callback();
+      };
+  }
+
+  script.src = "https://crossorigin.me/http://lilpm.ahitt-industries.com/lpms/"+url+".lpm";
+  document.getElementsByTagName("head")[0].appendChild(script);
+}
