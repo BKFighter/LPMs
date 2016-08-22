@@ -1,23 +1,22 @@
-var tx=0;
-var ty=0;
-function setCenter(_state) {
-  if (_state === true) {
-      tx=100;
-      ty=100;
-      ctx.transform(1,0,0,1,tx,ty);
-  }
-}
+var tx = 0;
+var ty = 0;
 
-if (edited["center"]===undefined) {
-(function() {
-edited["center"]=true;
-    var _old_stop = stopCode;
-    stopCode = function() {
-    ctx.transform(1,0,0,1,-tx,-ty);
-    tx=0;
-    ty=0;
-        return _old_stop.apply(window, arguments);
-        
-    };
-})();
+function setCenter(_state) {
+    if (_state === true) {
+        tx = 100;
+        ty = 100;
+        ctx.transform(1, 0, 0, 1, tx, ty);
+    }
+}
+if (edited["center"] === undefined) {
+    (function() {
+        edited["center"] = true;
+        var _old_stop = stopCode;
+        stopCode = function() {
+            ctx.transform(1, 0, 0, 1, -tx, -ty);
+            tx = 0;
+            ty = 0;
+            return _old_stop.apply(window, arguments);
+        };
+    })();
 }
