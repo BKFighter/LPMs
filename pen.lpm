@@ -17,6 +17,7 @@ function penDown() {
 function penLineTo(x,y) {
      if (pen) {
         ctx.lineTo(x, y);
+        ctx.stroke();
      }
 }
 
