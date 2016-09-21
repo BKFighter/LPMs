@@ -1,9 +1,16 @@
-//way better version!
-
 var pen;
 
 function penColor(color) {
-    ctx.fillStyle = color;
+    ctx.strokeStyle = color;
+}
+
+function penNewPath() {
+    ctx.beginPath();
+}
+
+function penFill() {
+    ctx.closePath();
+    ctx.fill();
 }
 
 function penUp() {
