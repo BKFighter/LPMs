@@ -1,7 +1,11 @@
 var pen;
 
-function penColor(color) {
+function penLineColor(color) {
     ctx.strokeStyle = color;
+}
+
+function penFillColor(color) {
+    ctx.fillStyle = color;
 }
 
 function penNewPath() {
@@ -29,7 +33,9 @@ function penLineTo(x,y) {
 }
 
 function movePen(x,y) {
+    if (pen) {
        ctx.moveTo(x, y);
+    }
 }
 
 function penSize(size) {
